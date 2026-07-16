@@ -11,7 +11,22 @@
 
 </head>
 <body>
-    
+
+    <div class="titulo">
+        <h1>BEM-VINDO AO (NOME QUE VOU PENSAR)</h1>
+    </div>
+
+    <div class="form">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite o nome da pessoa"><br>
+        <button type="submit" onclick="adicionarPessoa()">Adicionar pessoa</button>
+
+        <button onclick="mostrar()">Mostrar pessoas</button>
+    </div>
+
+    <div class="lista">
+        <ul id="listaNomes"></ul>
+    </div>
 
     <script src="script.js"></script>
 </body>

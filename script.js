@@ -6,10 +6,6 @@ function adicionarPessoa(){
 
     pessoas.push(nome);
 
-    input.value = "";
-}
-
-function mostrar(){
     const lista = document.getElementById("listaNomes");
 
     lista.innerHTML = "";
@@ -17,6 +13,6 @@ function mostrar(){
     for (let nome of pessoas){
         lista.innerHTML += `<li>${nome}</li>`;
     }
-
+    input.value = "";
 
 }

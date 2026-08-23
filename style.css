@@ -1,0 +1,12 @@
+.form{
+    display: flex;
+    justify-content: center;
+}
+
+li{
+    margin-top: 4px;
+    border: 0.5px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 4px;
+}

@@ -20,7 +20,6 @@ function removerPessoa(id){
     pessoas.splice(index, 1);
 
     console.log(pessoas);
-    
 
     exibirLista(lista);
 }

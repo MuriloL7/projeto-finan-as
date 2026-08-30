@@ -1,26 +1,50 @@
-let pessoas = [];
 const lista = document.getElementById("listaNomes");
+let pessoas;
+
+if(localStorage.getItem("listaPessoas") != null){
+    pessoas = JSON.parse(localStorage.getItem("listaPessoas"));
+    exibirLista(lista);
+}
 
 function adicionarPessoa(){
-    const input = document.getElementById("nome");
-    const nome = input.value;
+    let input = document.getElementById("nome");
+    let nome = input.value;
 
-    pessoas.push(nome);
+    if(nome == ''){
+        alert("É necessário informar um nome");
+    } else{
+        if(localStorage.getItem("listaPessoas") === null){
+            pessoas = [nome];
 
-    input.value = "";
+            input.value = "";
+            
+            localStorage.setItem("listaPessoas", JSON.stringify(pessoas));
 
-    exibirLista(lista);
+            exibirLista(lista);
+        } else{
+            pessoas = JSON.parse(localStorage.getItem("listaPessoas"));
+            input = document.getElementById("nome");
+            nome = input.value;
+
+            pessoas.push(nome);
+
+            input.value = "";
+            
+            localStorage.setItem("listaPessoas", JSON.stringify(pessoas));
+
+            exibirLista(lista);
+        }
+    }
 }
 
 function removerPessoa(cont){
     pessoas.splice(cont, 1);
-
-    console.log(pessoas);
+    localStorage.setItem("listaPessoas", JSON.stringify(pessoas));
 
     exibirLista(lista);
 }
 
-function exibirLista(lista){
+function exibirLista(){
     let cont = 0;
     lista.innerHTML = "";
     for (let nome of pessoas){

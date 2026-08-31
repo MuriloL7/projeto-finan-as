@@ -1,0 +1,8 @@
+.form{
+    display: flex;
+    justify-content: center;
+}
+
+li{
+    margin-top: 4px;
+}
